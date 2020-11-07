@@ -4,35 +4,42 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Объекты в JS</title>
+    <title>цикл</title>
     <script type="text/JavaScript">
         function def(form)
         {
-         var arr=[];
-        for(i=0;i<10;i++)
-            {
-                arr[i]=prompt('Введите '+i+' число:',+i);
-            }
-        var x=form1.out.value;
-            if(x==1)
-            {
-                alert(arr);
-            }
-        var arr1=[];
-         for(i=0;i<10;i++)
-            {
-               if(arr[i]==arr[i+1])
-               {
-                   arr1.push(arr[i],arr[i+1]);
-               }
-            }
-            if(arr1[0]==null)
+         var x=form.x.value;
+         var n1,m,k=0;
+         m=x%10;
+         n1=x;
+            while(x>9)
                 {
-                    alert('Парных элементов нет');
+              x=x/10; 
                 }
-            else 
-            {alert('Парные элементы: '+arr1);}
+            
+            n1=Math.floor(n1/10)*10+x;
+            n1=Math.floor(n1);
+            while(n1>1)
+                {
+                    x=n1%10;
+                    x=Math.floor(x);
+                    k=k*10+x
+                    n1=n1/10;
+                }
+            k=Math.floor(k/10)*10+m;
+           n1=Math.floor(n1);
+             while(k>1)
+                {
+                    x=k%10;
+                    x=Math.floor(x);
+                    n1=n1*10+x;
+                    k=k/10;
+                    
+                }
+            
+        form.res.value=n1;
         }
+            
     </script>
 </head>
 
@@ -41,10 +48,13 @@
 
 
     <form name="form1">
-      Выводить массив<input type="radio" name="out" value="1" checked>
-        Не выводить массив<input type="radio" name="out" value="0" >
+        <p> Введите число для замены первой и последней цифры:</p>
+        Число:
+        <input type="text" name="x" size=35>
+        <input type="button" value="Ответ" onClick="def(form1)">
         <br><br>
-        <input type="button" value="Ввести массив и получить результат" onClick="def()">
+        Результат:
+        <input type="text" name="res" size=35>
         <br><br>
         <input type="reset">
     </form>
@@ -52,4 +62,3 @@
 </body>
 
 </html>
-
