@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Пользовательские объекты</title>
+    <script type="text/JavaScript">
+        class Bib{
+            constructor(name,age,lot,date,debt){
+            this.name=name
+            this.age=age
+            this.lot=lot
+            this.date=date
+            this.debt=debt
+        }
+        }
+        Bib.prototype.getFull=function(){return this.name+" "+this.age+" "+this.lot+" "+this.date+" "+this.debt}
+        Bib.prototype.setName=function(name){this.name=name}
+        Bib.prototype.setAge=function(age){this.age=age}
+        Bib.prototype.setLot=function(lot){this.lot=lot}
+        Bib.prototype.setDate=function(date){this.date=date}
+        Bib.prototype.setDebt=function(debt){this.debt=debt}
+        let arr=[]
+        for(i=0;i<2;i++)
+            {
+               arr[i]=new Bib()
+                arr[i].setName(prompt("Введите имя "+i+" абонента", "Федя"))
+                arr[i].setAge(prompt("Введите возраст "+i+" абонента", 19))
+                arr[i].setLot(prompt("Введите количество взятых книг "+i+" абонента", 3))
+                arr[i].setDate(prompt("Введите дату последнего обращения "+i+" абонента", "07.11.2020"))
+                arr[i].setDebt(prompt("Введите кол-во долгов у "+i+" абонента", 2))
+            }
+       for(i=0;i<2;i++)
+           {
+               alert(arr[i].getFull())
+           }
+                    
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
