@@ -15,6 +15,12 @@
         }
         }
         Bib.prototype.getFull=function(){return this.name+" "+this.age+" "+this.lot+" "+this.date+" "+this.debt}
+        Bib.prototype.getName=function(){return this.name}
+        Bib.prototype.getAge=function(){return this.age}
+        Bib.prototype.getLot=function(){return this.lot}
+        Bib.prototype.getDate=function(){return this.date}
+        Bib.prototype.getDebt=function(){return this.debt}
+
         Bib.prototype.setName=function(name){this.name=name}
         Bib.prototype.setAge=function(age){this.age=age}
         Bib.prototype.setLot=function(lot){this.lot=lot}
@@ -32,7 +38,7 @@
             }
        for(i=0;i<2;i++)
            {
-               alert(arr[i].getFull())
+               document.write("<p> Имя: "+arr[i].getName()+" Возраст: "+arr[i].getAge()+" Кол-во взятых книг: "+arr[i].getLot()+" Последняя дата обращения: "+arr[i].getDate()+" Кол-во долгов: "+arr[i].getDebt()+"<br>")
            }
                     
 
