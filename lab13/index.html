@@ -27,7 +27,7 @@
         Bib.prototype.setDate=function(date){this.date=date}
         Bib.prototype.setDebt=function(debt){this.debt=debt}
         let arr=[]
-        for(i=0;i<2;i++)
+        for(i=0;i<12;i++)
             {
                arr[i]=new Bib()
                 arr[i].setName(prompt("Введите имя "+i+" абонента", "Федя"))
@@ -36,7 +36,7 @@
                 arr[i].setDate(prompt("Введите дату последнего обращения "+i+" абонента", "07.11.2020"))
                 arr[i].setDebt(prompt("Введите кол-во долгов у "+i+" абонента", 2))
             }
-       for(i=0;i<2;i++)
+       for(i=0;i<12;i++)
            {
                document.write("<p> Имя: "+arr[i].getName()+" Возраст: "+arr[i].getAge()+" Кол-во взятых книг: "+arr[i].getLot()+" Последняя дата обращения: "+arr[i].getDate()+" Кол-во долгов: "+arr[i].getDebt()+"<br>")
            }
