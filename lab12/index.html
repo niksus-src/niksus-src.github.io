@@ -7,6 +7,16 @@
     <script type="text/JavaScript">
         function def(form)
         {
+        var dt = new Date();
+        var options = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                timezone: 'UTC',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            };
          var arr=[];
         for(i=0;i<10;i++)
             {
@@ -27,10 +37,16 @@
             }
             if(arr1[0]==null)
                 {
-                    alert('Парных элементов нет');
+                    document.writeln("Время проверки: " + dt.toLocaleDateString("ru", options) + ", " + dt.toLocaleDateString("ru", {
+                weekday: 'long'
+            }) + "<br>");
+                   document.write('Парных элементов нет'); 
                 }
             else 
-            {alert('Парные элементы: '+arr1);}
+            {document.writeln("Время проверки: " + dt.toLocaleDateString("ru", options) + ", " + dt.toLocaleDateString("ru", {
+                weekday: 'long'
+            }) + "<br>");
+        document.write('Парные элементы: '+arr1);}
         }
     </script>
 </head>
